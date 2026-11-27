@@ -78,7 +78,7 @@ Abre Postman y crea una solicitud con estos datos:
 
 **Método:** `POST`
 
-**URL:** `http://localhost:8081/api/auth/login`
+**URL:** `http://localhost:8081/api/v1/auth/login`
 
 Selecciona **Body → raw → JSON** e introduce:
 
@@ -99,15 +99,15 @@ El token tiene una vigencia de 60 minutos.
 
 | Método | Endpoint | Función |
 |---|---|---|
-| POST | `/api/auth/login` | Iniciar sesión |
-| GET | `/api/usuarios` | Listar usuarios |
-| GET | `/api/usuarios/{id}` | Buscar usuario por ID |
-| GET | `/api/usuarios/email/{email}` | Buscar usuario por correo |
-| POST | `/api/usuarios` | Crear usuario |
-| PUT | `/api/usuarios/{id}` | Actualizar usuario |
-| DELETE | `/api/usuarios/{id}` | Eliminar usuario |
-| PATCH | `/api/usuarios/{id}/activar` | Activar cuenta |
-| PATCH | `/api/usuarios/{id}/desactivar` | Desactivar cuenta |
+| POST | `/api/v1/auth/login` | Iniciar sesión |
+| GET | `/api/v1/usuarios` | Listar usuarios |
+| GET | `/api/v1/usuarios/{id}` | Buscar usuario por ID |
+| GET | `/api/v1/usuarios/email/{email}` | Buscar usuario por correo |
+| POST | `/api/v1/usuarios` | Crear usuario |
+| PUT | `/api/v1/usuarios/{id}` | Actualizar usuario |
+| DELETE | `/api/v1/usuarios/{id}` | Eliminar usuario |
+| PATCH | `/api/v1/usuarios/{id}/activar` | Activar cuenta |
+| PATCH | `/api/v1/usuarios/{id}/desactivar` | Desactivar cuenta |
 
 Las operaciones de usuarios requieren un token JWT válido.
 
@@ -160,3 +160,13 @@ La persistencia se realiza en MySQL. Las contraseñas se almacenan mediante BCry
 **Nota:** las credenciales de demostración son exclusivamente para pruebas académicas. No deben utilizarse en producción.
 
 Proyecto académico RecetaYa — Duoc UC.
+
+## API REST v1
+
+Usa el prefijo `/api/v1` para clientes nuevos. Las rutas anteriores se conservan para clientes de la EP2.
+
+- `/api/v1/auth`
+- `/api/v1/roles`
+- `/api/v1/usuarios`
+
+Inicia sesión con `POST /api/v1/auth/login`. La versión v1 aplica los mismos permisos que las rutas anteriores.

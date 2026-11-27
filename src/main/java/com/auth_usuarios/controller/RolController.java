@@ -18,7 +18,7 @@ import com.auth_usuarios.service.RolService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/roles")
+@RequestMapping({"/api/v1/roles", "/api/roles"})
 public class RolController {
     @Autowired
     private  RolService rolService;
