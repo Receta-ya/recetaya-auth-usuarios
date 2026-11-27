@@ -35,7 +35,8 @@ public class SecurityConfig {
                 // LOGIN PUBLICO
                 .requestMatchers(
                     HttpMethod.POST,
-                    "/api/auth/login"
+                    "/api/auth/login",
+                    "/api/v1/auth/login"
                 ).permitAll()
 
                 // CONSULTAR USUARIOS
@@ -43,7 +44,9 @@ public class SecurityConfig {
                 .requestMatchers(
                     HttpMethod.GET,
                     "/api/usuarios",
-                    "/api/usuarios/**"
+                    "/api/v1/usuarios",
+                    "/api/usuarios/**",
+                    "/api/v1/usuarios/**"
                 ).hasAnyRole("MEDICO", "FARMACEUTICO")
 
                 // BLOQUEAR OPERACIONES ADMINISTRATIVAS
@@ -51,13 +54,17 @@ public class SecurityConfig {
                 // hasta definir un mecanismo autorizado
                 .requestMatchers(
                     "/api/usuarios",
-                    "/api/usuarios/**"
+                    "/api/v1/usuarios",
+                    "/api/usuarios/**",
+                    "/api/v1/usuarios/**"
                 ).hasAnyRole("MEDICO", "FARMACEUTICO")
 
                 // BLOQUEAR ADMINISTRACION DE ROLES
                 .requestMatchers(
                     "/api/roles",
-                    "/api/roles/**"
+                    "/api/v1/roles",
+                    "/api/roles/**",
+                    "/api/v1/roles/**"
                 ).denyAll()
 
                 // DENEGAR CUALQUIER OTRA RUTA

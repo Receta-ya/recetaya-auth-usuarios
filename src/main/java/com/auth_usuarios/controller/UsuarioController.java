@@ -13,7 +13,7 @@ import com.auth_usuarios.dto.UsuarioResponse;
 import com.auth_usuarios.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping({"/api/v1/usuarios", "/api/usuarios"})
 public class UsuarioController {
 
     @Autowired

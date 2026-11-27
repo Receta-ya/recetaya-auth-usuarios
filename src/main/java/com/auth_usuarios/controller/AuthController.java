@@ -13,7 +13,7 @@ import com.auth_usuarios.dto.LoginResponse;
 import com.auth_usuarios.service.AuthService;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping({"/api/v1/auth", "/api/auth"})
 public class AuthController {
 
     @Autowired
